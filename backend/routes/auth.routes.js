@@ -7,6 +7,7 @@ const { auditLog } = require('../middleware/audit.middleware');
 const {
   registerValidator,
   loginValidator,
+  verifyOtpValidator,
   forgotPasswordValidator,
   resetPasswordValidator,
 } = require('../validators/auth.validator');
@@ -28,7 +29,7 @@ const registerLimiter = rateLimit({
 });
 
 router.post('/register', registerLimiter, registerValidator, auditLog('REGISTER'), authController.register);
-router.get('/verify-email', authController.verifyEmail);
+router.post('/verify-otp', verifyOtpValidator, authController.verifyOtp);
 router.post('/login', authLimiter, loginValidator, auditLog('LOGIN'), authController.login);
 router.post('/refresh-token', authController.refreshToken);
 router.post('/logout', authenticate, auditLog('LOGOUT'), authController.logout);
