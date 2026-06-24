@@ -46,4 +46,7 @@ app.listen(PORT, () => {
   console.log(`🚀 Serveur CNova démarré sur le port ${PORT} [${process.env.NODE_ENV}]`);
 });
 
+const usersRoutes = require('./routes/users.routes');
+app.use('/api/users', usersRoutes);
+
 module.exports = app;
