@@ -49,4 +49,14 @@ app.listen(PORT, () => {
 const usersRoutes = require('./routes/users.routes');
 app.use('/api/users', usersRoutes);
 
+const auteursRoutes = require('./routes/auteurs.routes');
+const categoriesRoutes = require('./routes/categories.routes');
+const livresRoutes = require('./routes/livres.routes');
+const exemplairesRoutes = require('./routes/exemplaires.routes');
+
+app.use('/api/auteurs', auteursRoutes);
+app.use('/api/categories', categoriesRoutes);
+app.use('/api/livres', livresRoutes);
+app.use('/api/exemplaires', exemplairesRoutes);
+
 module.exports = app;
