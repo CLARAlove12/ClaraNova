@@ -7,7 +7,7 @@ const sendOtpVerificationEmail = async (to, prenom, otp) => {
     subject: 'CNova — Activation de votre compte',
     html: `
       <div style="font-family:Arial,sans-serif;max-width:600px;margin:auto;padding:24px;">
-        <h2 style="color:#4F46E5;">Bienvenue sur CNova 📚</h2>
+        <h2 style="color:#4F46E5;">Bienvenue sur CNova </h2>
         <p>Bonjour <strong>${prenom}</strong>,</p>
         <p>Votre code d'activation est :</p>
         <div style="font-size:36px;font-weight:bold;letter-spacing:8px;
@@ -52,10 +52,10 @@ const sendWelcomeEmail = async (to, prenom) => {
   await transporter.sendMail({
     from: process.env.EMAIL_FROM || 'CNova <no-reply@cnova.com>',
     to,
-    subject: 'CNova — Votre compte est activé 🎉',
+    subject: 'CNova — Votre compte est activé ',
     html: `
       <div style="font-family:Arial,sans-serif;max-width:600px;margin:auto;padding:24px;">
-        <h2 style="color:#16A34A;">Bonjour ${prenom} 👋</h2>
+        <h2 style="color:#16A34A;">Bonjour ${prenom} </h2>
         <p>Votre compte CNova est maintenant activé.</p>
         <p>Vous pouvez vous connecter et commencer à emprunter des livres.</p>
         <a href="${process.env.CLIENT_URL}/login"
